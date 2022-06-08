@@ -10,10 +10,15 @@ function getRandomNumber(minNumber, maxNumber) {
 /* функция проверяет максимальную длину заданной строки, возвращает true или false */
 function hasAllowedStringLength(string, maxLength) {
   if (typeof string === 'string') {
-    return string.length <= maxLength;
+    if (string.length <= maxLength) {
+      return true;
+    }
+    return false;
   }
-  return false;
+  throw new Error ('Введены некорректные данные');
 }
+
+console.log(hasAllowedStringLength([], 18));
 
 
 hasAllowedStringLength('Стас, ты молодец!', 17);
